@@ -1,3 +1,4 @@
+
 " Leader
 let mapleader = " "
 
@@ -11,6 +12,10 @@ set showcmd       " display incomplete commands
 set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
 set autowrite     " Automatically :write before running commands
+set clipboard=unnamed,unnamedplus
+
+:imap jj <Esc>
+
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -48,10 +53,10 @@ augroup vimrcEx
   if g:has_async
     set updatetime=1000
     let g:ale_lint_on_text_changed = 0
-    autocmd CursorHold * call ale#Lint()
-    autocmd CursorHoldI * call ale#Lint()
-    autocmd InsertEnter * call ale#Lint()
-    autocmd InsertLeave * call ale#Lint()
+    "autocmd CursorHold * call ale#Lint()
+    "autocmd CursorHoldI * call ale#Lint()
+    "autocmd InsertEnter * call ale#Lint()
+    "autocmd InsertLeave * call ale#Lint()
   else
     echoerr "The thoughtbot dotfiles require NeoVim or Vim 8"
   endif
@@ -90,8 +95,8 @@ if executable('ag')
   endif
 endif
 
-" Make it obvious where 80 characters is
-set textwidth=80
+" Make it obvious where 100 characters is
+set textwidth=100
 set colorcolumn=+1
 
 " Numbers
@@ -163,3 +168,5 @@ set diffopt+=vertical
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
 endif
+
+colorscheme hybrid

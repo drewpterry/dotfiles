@@ -36,6 +36,10 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/tComment'
+Plug 'flazz/vim-colorschemes'
+Plug 'tomlion/vim-solidity'
+Plug 'posva/vim-vue'
+
 
 if g:has_async
   Plug 'w0rp/ale'
